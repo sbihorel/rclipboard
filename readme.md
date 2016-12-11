@@ -1,4 +1,4 @@
-# clipboardr: clipboard.js for R/Shiny Application
+# rclipboard: clipboard.js for R/Shiny Application
 
 ### Introduction
 [clipboard.js](https://clipboardjs.com/) is a super light javascript package,
