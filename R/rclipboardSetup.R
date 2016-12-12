@@ -4,9 +4,7 @@ rclipboardSetup <- function()
     singleton(
       tags$head(
         tags$script(
-          src = sprintf('%s/clipboard.min.js', 
-            system.file('lib', package = "rclipboard")
-          )
+          src = sprintf('%s/clipboard.min.js', system.file('lib', package = "rclipboard"))
         )
       )
     )
