@@ -11,6 +11,9 @@ reactive copy-to-clipboard UI button component, called `rclipButton`, for
 
 This example only works when deployed on a Shiny server. If this app is run from
 RStudio, the UI displays correctly but the rclipButton UI button is not functional.
+A workaround is to also include an observeEvent associated to the rclipButton and
+use the clipr function from the clipr package (this function only works when the app
+is run locally, eg from RStudio, and not when deployed on a server).
 
 
 ```R
