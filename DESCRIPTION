@@ -2,6 +2,7 @@ Package: rclipboard
 Title: Shiny/R wrapper for clipboard.js 
 Version: 0.1
 Author: Sebastien Bihorel
+Maintainer: Sebastien Bihorel <sb.pmlab@gmail.com>
 Description: rclipboard leverages `clipboard.js functionality to provide a reactive copy-to-clipboard UI button component, called rclipButton, for Shiny R applications.
 Depends: R (>= 3.3.0)
 License: MIT
