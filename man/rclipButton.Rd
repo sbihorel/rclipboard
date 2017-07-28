@@ -24,6 +24,8 @@ https://clipboardjs.com/
   Sebastien Bihorel
 }
 \examples{
+## Not run
+\dontrun{
 library(rclipboard)
 library(shiny)
 
@@ -41,7 +43,7 @@ ui <- bootstrapPage(
   # A text input for testing the clipboard content.
   textInput("paste", "Paste here:")
   
-),
+)
 
 # The server
 server <- function(input, output) {
@@ -54,4 +56,5 @@ server <- function(input, output) {
 }
 
 shinyApp(ui = ui, server = server)
+}
 }
