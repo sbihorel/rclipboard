@@ -10,12 +10,13 @@ reactive copy-to-clipboard UI button component, called `rclipButton`, for
 ### Example
 
 This example works when deployed on a Shiny server or when it is run from
-RStudio. However, because of limitations in the web engine of current RStudio
-versions, the rclipButton does not work natively when the application is run
+RStudio. However, because of limitations in the web engine of RStudio versions
+prior to 1.2, the rclipButton does not work natively when the application is run
 locally. A workaround must be implemented in the form of an observeEvent associated
-to the rclipButton and using the clipr function from the clipr package. Note that 
-this function only works when the application is run locally and not when deployed
-on a server.
+to the rclipButton and using the clipr function from the clipr package.
+
+This workaround is not required if you run your applications in RStudio versions 
+\>= 1.2.
 
 
 ```R
@@ -46,7 +47,7 @@ server <- function(input, output) {
     rclipButton("clipbtn", "rclipButton Copy", input$copytext, icon("clipboard"))
   })
   
-  # Workaround for execution within RStudio
+  # Workaround for execution within RStudio version < 1.2
   observeEvent(input$clipbtn, clipr::write_clip(input$copytext))
   
 }
