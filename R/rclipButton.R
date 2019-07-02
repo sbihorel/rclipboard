@@ -1,4 +1,4 @@
-rclipButton <- function(inputId, label, clipText, icon = NULL, width = NULL)
+rclipButton2 <- function(inputId, label, clipText, icon = NULL, width = NULL, modal = FALSE)
 {
   tagList(
     actionButton(inputId = inputId,
@@ -6,12 +6,20 @@ rclipButton <- function(inputId, label, clipText, icon = NULL, width = NULL)
                  icon = icon,
                  width = NULL,
                  `data-clipboard-text` = clipText),
-    tags$script(
-      sprintf(
-        'var client_%s = new ClipboardJS( document.getElementById("%s") );',
-        gsub('-', '', inputId),
-        inputId
+    if (modal){
+      tags$script(
+        sprintf(
+          'new ClipboardJS(".btn", { container: document.getElementById("%s") } ); ',
+          inputId
+        )
       )
-    )
+    } else {
+      tags$script(
+        sprintf(
+          'new ClipboardJS(".btn", document.getElementById("%s") );',
+          inputId
+        )
+      )
+    }
   )
 }

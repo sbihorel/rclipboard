@@ -3,7 +3,7 @@
 \title{Send to clipboard action button}
 \description{Creates an action button that will send user-defined text to the OS clipboard.}
 \usage{
-rclipButton(inputId, label, clipText, icon = NULL, width = NULL)
+rclipButton(inputId, label, clipText, icon = NULL, width = NULL, modal = FALSE)
 }
 \arguments{
   \item{inputId}{The \code{input} slot that will be used to access the value.}
@@ -13,6 +13,8 @@ rclipButton(inputId, label, clipText, icon = NULL, width = NULL)
   \item{icon}{An optional \code{\link[shiny]{icon}} to appear on the button.}
   \item{width}{The width of the input, e.g. \code{'400px'}, or \code{'100\%'};
   see \code{\link[shiny]{validateCssUnit}}.}
+  \item{modal}{A logical flag indicating whether the button will be shown in a
+    modal window (TRUE) or not (NOT).}
 }
 \references{
 https://clipboardjs.com/
