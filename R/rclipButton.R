@@ -1,4 +1,4 @@
-rclipButton2 <- function(inputId, label, clipText, icon = NULL, width = NULL, modal = FALSE)
+rclipButton <- function(inputId, label, clipText, icon = NULL, width = NULL, modal = FALSE)
 {
   tagList(
     actionButton(inputId = inputId,
