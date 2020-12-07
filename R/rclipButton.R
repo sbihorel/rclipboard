@@ -4,7 +4,7 @@ rclipButton <- function(inputId, label, clipText, icon = NULL, width = NULL, mod
     actionButton(inputId = inputId,
                  label = label,
                  icon = icon,
-                 width = NULL,
+                 width = width,
                  `data-clipboard-text` = clipText),
     if (modal){
       tags$script(
