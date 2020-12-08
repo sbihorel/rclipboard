@@ -48,7 +48,9 @@ server <- function(input, output) {
   })
   
   # Workaround for execution within RStudio version < 1.2
-  observeEvent(input$clipbtn, clipr::write_clip(input$copytext))
+  if (interactive()){
+    observeEvent(input$clipbtn, clipr::write_clip(input$copytext))
+  }
   
 }
 
