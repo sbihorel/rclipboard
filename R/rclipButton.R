@@ -1,25 +1,26 @@
-rclipButton <- function(inputId, label, clipText, icon = NULL, width = NULL, modal = FALSE)
+rclip <- function(FUN, inputId, label, clipText, ..., modal = FALSE)
 {
+  if (modal){
+    code <- 'new ClipboardJS(".btn", { container: document.getElementById("%s") } ); '
+  } else {
+    code <- 'new ClipboardJS(".btn", document.getElementById("%s") );'
+  }
+
   tagList(
-    actionButton(inputId = inputId,
-                 label = label,
-                 icon = icon,
-                 width = width,
-                 `data-clipboard-text` = clipText),
-    if (modal){
-      tags$script(
-        sprintf(
-          'new ClipboardJS(".btn", { container: document.getElementById("%s") } ); ',
-          inputId
-        )
-      )
-    } else {
-      tags$script(
-        sprintf(
-          'new ClipboardJS(".btn", document.getElementById("%s") );',
-          inputId
-        )
-      )
-    }
+    FUN(inputId = inputId,
+        label = label,
+        ...,
+        `data-clipboard-text` = clipText),
+    tags$script(sprintf(code, inputId))
   )
+}
+
+rclipButton <- function(inputId, label, clipText, ..., modal = FALSE)
+{
+  rclip(actionButton, inputId, label, clipText, ..., modal=modal)
+}
+
+rclipLink <- function(inputId, label, clipText, ..., modal = FALSE)
+{
+  rclip(actionLink, inputId, label, clipText, ..., modal=modal)
 }
