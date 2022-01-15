@@ -6,7 +6,8 @@ Maintainer: Sebastien Bihorel <sb.pmlab@gmail.com>
 Description: Leverages the functionality of 'clipboard.js', a JavaScript library
     for HMTL5-based copy to clipboard from web pages (see <https://clipboardjs.com>
     for more information), and provides a reactive copy-to-clipboard UI button 
-    component, called 'rclipButton', for 'shiny' R applications.
+    component, called 'rclipButton', and a a reactive copy-to-clipboard UI link 
+    component, called 'rclipLink', for 'shiny' R applications.
 Depends: R (>= 3.3.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
