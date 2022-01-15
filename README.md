@@ -4,7 +4,8 @@
 [clipboard.js](https://clipboardjs.com/) is a super light javascript framework,
 which provides copy-to-clipboard functionality using HTML5. The simple `rclipboard`
 R package is simple and leverages `clipboard.js` functionality to provide a
-reactive copy-to-clipboard UI button component, called `rclipButton`, for
+reactive copy-to-clipboard UI button component, called `rclipButton`, and a
+reactive copy-to-clipboard UI link component, called `rclipLink`, for
 [Shiny](https://shiny.rstudio.com/) R applications.
 
 ### Example
