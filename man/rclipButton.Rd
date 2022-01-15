@@ -1,20 +1,21 @@
 \name{rclipButton}
 \alias{rclipButton}
-\title{Send to clipboard action button}
-\description{Creates an action button that will send user-defined text to the OS clipboard.}
+\alias{rclipLink}
+\title{Action button or action link to send information to clipboard}
+\description{Creates an action button or link that will send user-defined text to the OS clipboard.}
 \usage{
-rclipButton(inputId, label, clipText, icon = NULL, width = NULL, modal = FALSE)
+rclipButton(inputId, label, clipText, modal = FALSE, ...)
+rclipLink(inputId, label, clipText, modal = FALSE, ...)
 }
 \arguments{
   \item{inputId}{The \code{input} slot that will be used to access the value.}
   \item{label}{The contents of the button or link--usually a text label, but
   you could also use any other HTML, like an image.}
   \item{clipText}{A single scalar character variable to be sent to the clipboard.}
-  \item{icon}{An optional \code{\link[shiny]{icon}} to appear on the button.}
-  \item{width}{The width of the input, e.g. \code{'400px'}, or \code{'100\%'};
-  see \code{\link[shiny]{validateCssUnit}}.}
   \item{modal}{A logical flag indicating whether the button will be shown in a
     modal window (TRUE) or not (NOT).}
+  \item{...}{Additional arguments (e.g. \code{icon} or \code{width}) passed down 
+  to \code{\link[shiny]{actionButton}} or \code{\link[shiny]{actionLink}}.}
 }
 \references{
 https://clipboardjs.com/

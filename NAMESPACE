@@ -1,2 +1,2 @@
-exportPattern("^[^\\.]")
-importFrom('shiny', 'actionButton', 'singleton', 'tagList', 'tags')
+export('rclipboardSetup', 'rclipButton', 'rclipLink')
+importFrom('shiny', 'actionButton', 'actionLink', 'singleton', 'tagList', 'tags')
