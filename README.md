@@ -45,7 +45,13 @@ server <- function(input, output) {
 
   # Add clipboard buttons
   output$clip <- renderUI({
-    rclipButton("clipbtn", "rclipButton Copy", input$copytext, icon("clipboard"))
+    output$clip <- renderUI({
+    rclipButton(
+      inputId = "clipbtn",
+      label = "rclipButton Copy",
+      clipText = input$copytext, 
+      icon = icon("clipboard")
+    )
   })
   
   # Workaround for execution within RStudio version < 1.2
