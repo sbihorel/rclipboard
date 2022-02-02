@@ -59,6 +59,7 @@ server <- function(input, output) {
     observeEvent(input$clipbtn, clipr::write_clip(input$copytext))
   }
   
+  })
 }
 
 shinyApp(ui = ui, server = server)
