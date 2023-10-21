@@ -8,4 +8,3 @@ rclipboardSetup <- function()
     )
   )
 }
-

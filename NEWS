@@ -1,4 +1,13 @@
-Version 0.1.4
+Version 0.2.0
+* Support for bslib::tooltip
+* Upgrade to clipboard.js v2.0.11
 
+Version 0.1.6
+* Bug fix
+
+Version 0.1.5
+* Bug fix
+
+Version 0.1.4
 * Add rclipLink
 * Upgrade to clipboard.js v2.0.8

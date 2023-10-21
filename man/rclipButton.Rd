@@ -4,7 +4,7 @@
 \title{Action button or action link to send information to clipboard}
 \description{Creates an action button or link that will send user-defined text to the OS clipboard.}
 \usage{
-rclipButton(inputId, label, clipText, modal = FALSE, ...)
+rclipButton(inputId, label, clipText, modal = FALSE, tooltip, placement, options, ...)
 rclipLink(inputId, label, clipText, modal = FALSE, ...)
 }
 \arguments{
@@ -14,14 +14,17 @@ rclipLink(inputId, label, clipText, modal = FALSE, ...)
   \item{clipText}{A single scalar character variable to be sent to the clipboard.}
   \item{modal}{A logical flag indicating whether the button will be shown in a
     modal window (TRUE) or not (NOT).}
+  \item{tooltip}{A strip to display in a tooltip (using the \code{bslib} package)}
+  \item{placement}{The placement of the tooltip relative to the button}
+  \item{options}{List of options for the tooltip}
   \item{...}{Additional arguments (e.g. \code{icon} or \code{width}) passed down 
-  to \code{\link[shiny]{actionButton}} or \code{\link[shiny]{actionLink}}.}
+  to \code{\link[shiny]{actionButton}} or \code{\link[shiny]{actionLink}}. }
 }
 \references{
 https://clipboardjs.com/
 }
 \seealso{
-  \code{\link{rclipboardSetup}}
+  \code{\link{rclipboardSetup}}, \code{\link[bslib]{tooltip}}
 }
 \author{
   Sebastien Bihorel
@@ -57,7 +60,10 @@ server <- function(input, output) {
       inputId = "clipbtn", 
       label = "rclipButton Copy", 
       clipText = input$copytext, 
-      icon = icon("clipboard"))
+      icon = icon("clipboard"),
+      tooltip = "Click me to copy the content of the text field to the clipboard!",
+      options = list(delay = list(show = 800, hide = 100), trigger = "hover")
+    )
   })
   
 }
