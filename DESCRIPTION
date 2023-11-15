@@ -1,6 +1,6 @@
 Package: rclipboard
 Title: Shiny/R Wrapper for 'clipboard.js' 
-Version: 0.2.0
+Version: 0.2.1
 Author: Sebastien Bihorel
 Maintainer: Sebastien Bihorel <sb.pmlab@gmail.com>
 Description: Leverages the functionality of 'clipboard.js', a JavaScript library
@@ -14,4 +14,4 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/sbihorel/rclipboard/
 BugReports: https://github.com/sbihorel/rclipboard/issues/
-Imports: shiny, bslib
+Imports: shiny, bslib (>= 0.5.1)
